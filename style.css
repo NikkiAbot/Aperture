@@ -284,6 +284,12 @@ header .logo img {
   padding: 0 20px 100px 20px;
 }
 
+/* Remove padding from the empty Home and Contact details items so they don't scroll */
+.details-section .detail-item:first-child,
+.details-section .detail-item:last-child {
+  padding: 0;
+}
+
 .details-section .detail-item.active {
   display: block; /* Show details for active slide */
 }

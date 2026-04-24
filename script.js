@@ -4,6 +4,7 @@ let nextBtn = document.getElementById("next");
 let lastPosition = items.length - 1;
 let firstPosition = 0;
 let active = 0;
+const itemNames = ["Home", "About Me", "My Projects", "Contact Me"];
 
 nextBtn.onclick = () => {
   active++;
@@ -22,8 +23,18 @@ const setSlider = () => {
 
   nextBtn.classList.remove("d-none");
   prevBtn.classList.remove("d-none");
-  if (active == lastPosition) nextBtn.classList.add("d-none");
-  if (active == firstPosition) prevBtn.classList.add("d-none");
+
+  if (active == lastPosition) {
+    nextBtn.classList.add("d-none");
+  } else {
+    nextBtn.querySelector("span").innerText = itemNames[active + 1];
+  }
+
+  if (active == firstPosition) {
+    prevBtn.classList.add("d-none");
+  } else {
+    prevBtn.querySelector("span").innerText = itemNames[active - 1];
+  }
 };
 
 setSlider();

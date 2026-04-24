@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <figure class="logo">
+          <img src="Media/logo.png" alt="" />
+        </figure>
+        <nav>
+          <svg
+            class="w-6 h-6 text-gray-800 dark:text-white"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-width="2"  
+              d="M5 7h14M5 12h14M5 17h14"
+            />
+          </svg>
+        </nav>
+      </header>
+
+      <!-- SLIDER SECTION -->
+      <section class="slider">
+        <div class="list">
+            <!-- Home Item -->
+            <div class="item active">
+                <div class="image" style="--url: url('Media/Home.png');"></div>
+                <div class="content">
+                    <h2>Slider Image Magic</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptate.</p>
+                    <p>Voluptatem, voluptatum.  </p>
+                </div>
+            </div>
+            
+            <!-- About Item -->
+            <div class="item">
+                <div class="image" style="--url: url('Media/About.png');"></div>
+                <div class="content">
+                    <h2>Slider Image Magic</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptate.</p>
+                    <p>Voluptatem, voluptatum.  </p>
+                </div>
+            </div>
+
+            <!-- Projects Item -->
+            <div class="item">
+                <div class="image" style="--url: url('Media/Projects.png');"></div>
+                <div class="content">
+                    <h2>Slider Image Magic</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptate.</p>
+                    <p>Voluptatem, voluptatum.  </p>
+                </div>
+            </div>
+
+            <!-- Contact Item -->
+            <div class="item">
+                <div class="image" style="--url: url('Media/Contact.png');"></div>
+                <div class="content">
+                    <h2>Slider Image Magic</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptate.</p>
+                    <p>Voluptatem, voluptatum.  </p>
+                </div>
+            </div>
+            <!-- End -->
+
+            <!-- Navigation Buttons -->
+             <div class="arrows">
+                <!-- Previous Buttons -->
+                <button id="prev">
+                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/>
+</svg>
+                </button>
+                <!-- Next Buttons -->
+                <button id="next">
+                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
+</svg>
+
+                </button>
+             </div>
+
+        </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

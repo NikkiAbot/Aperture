@@ -1,4 +1,5 @@
 let items = document.querySelectorAll(".slider .item");
+let detailItems = document.querySelectorAll(".details-section .detail-item");
 let prevBtn = document.getElementById("prev");
 let nextBtn = document.getElementById("next");
 let lastPosition = items.length - 1;
@@ -20,6 +21,13 @@ const setSlider = () => {
   let oldActive = document.querySelector(".slider .item.active");
   if (oldActive) oldActive.classList.remove("active");
   items[active].classList.add("active");
+
+  // Sync the details section to show the correct content below the slider
+  let oldActiveDetail = document.querySelector(
+    ".details-section .detail-item.active",
+  );
+  if (oldActiveDetail) oldActiveDetail.classList.remove("active");
+  if (detailItems[active]) detailItems[active].classList.add("active");
 
   nextBtn.classList.remove("d-none");
   prevBtn.classList.remove("d-none");
@@ -51,3 +59,18 @@ const setDiameter = () => {
 
 setDiameter();
 window.addEventListener("resize", setDiameter);
+
+// BACK TO TOP BUTTON LOGIC
+const backToTopBtn = document.getElementById("back-to-top");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 200) {
+    backToTopBtn.classList.add("show");
+  } else {
+    backToTopBtn.classList.remove("show");
+  }
+});
+
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});

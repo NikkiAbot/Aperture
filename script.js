@@ -224,3 +224,228 @@ function animateNodes() {
 
 // Start the animation loop
 animateNodes();
+
+// PROJECTS CAROUSEL LOGIC
+const track = document.querySelector(".carousel-track");
+const slides = Array.from(track.children);
+const nextButton = document.querySelector(".proj-ctrl.next");
+const prevButton = document.querySelector(".proj-ctrl.prev");
+const dotsNav = document.querySelector(".proj-indicators");
+const dots = Array.from(dotsNav.children);
+
+let currentProjIndex = 0;
+
+const moveToSlide = (index) => {
+  track.style.transform = `translateX(-${index * 100}%)`;
+
+  dots.forEach((dot) => dot.classList.remove("active"));
+  dots[index].classList.add("active");
+
+  currentProjIndex = index;
+};
+
+nextButton.addEventListener("click", () => {
+  let targetIndex = currentProjIndex + 1;
+  if (targetIndex >= slides.length) targetIndex = 0; // Loop back
+  moveToSlide(targetIndex);
+});
+
+prevButton.addEventListener("click", () => {
+  let targetIndex = currentProjIndex - 1;
+  if (targetIndex < 0) targetIndex = slides.length - 1; // Loop to end
+  moveToSlide(targetIndex);
+});
+
+dotsNav.addEventListener("click", (e) => {
+  const targetDot = e.target.closest("span");
+  if (!targetDot) return;
+  const targetIndex = dots.findIndex((dot) => dot === targetDot);
+  moveToSlide(targetIndex);
+});
+
+// PROJECTS INTERACTIVE BACKGROUND LOGIC (CANVAS)
+const projCanvas = document.getElementById("projects-canvas");
+const pCtx = projCanvas.getContext("2d");
+
+let projParticles = [];
+const numProjParticles = 90; // Number of floating particles
+const projConnectionDistance = 120; // Distance to connect to each other
+const mouseInteractionRadius = 180; // Distance to connect to mouse
+
+let projMouse = { x: null, y: null };
+
+// Track mouse position relative to the canvas
+window.addEventListener("mousemove", (event) => {
+  if (!projCanvas) return;
+  const rect = projCanvas.getBoundingClientRect();
+  // Check if mouse is within the bounds of the section
+  if (
+    event.clientX >= rect.left &&
+    event.clientX <= rect.right &&
+    event.clientY >= rect.top &&
+    event.clientY <= rect.bottom
+  ) {
+    projMouse.x = event.clientX - rect.left;
+    projMouse.y = event.clientY - rect.top;
+  } else {
+    projMouse.x = null;
+    projMouse.y = null;
+  }
+});
+
+window.addEventListener("mouseout", () => {
+  projMouse.x = null;
+  projMouse.y = null;
+});
+
+class ProjParticle {
+  constructor(width, height) {
+    this.x = Math.random() * width;
+    this.y = Math.random() * height;
+    this.vx = (Math.random() - 0.5) * 1.2;
+    this.vy = (Math.random() - 0.5) * 1.2;
+    this.radius = Math.random() * 2.5 + 1;
+  }
+
+  update(width, height) {
+    this.x += this.vx;
+    this.y += this.vy;
+
+    if (this.x < 0 || this.x > width) this.vx *= -1;
+    if (this.y < 0 || this.y > height) this.vy *= -1;
+  }
+
+  draw() {
+    pCtx.beginPath();
+    pCtx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    pCtx.fillStyle = "rgba(140, 170, 110, 0.8)"; // Matches the olive theme
+    pCtx.fill();
+  }
+}
+
+function initProjParticles() {
+  projParticles = [];
+  for (let i = 0; i < numProjParticles; i++) {
+    projParticles.push(new ProjParticle(projCanvas.width, projCanvas.height));
+  }
+}
+
+function animateProjParticles() {
+  if (!projCanvas.parentElement) return;
+  const parentWidth = projCanvas.parentElement.offsetWidth;
+  const parentHeight = projCanvas.parentElement.offsetHeight;
+
+  if (
+    parentWidth > 0 &&
+    (projCanvas.width !== parentWidth || projCanvas.height !== parentHeight)
+  ) {
+    projCanvas.width = parentWidth;
+    projCanvas.height = parentHeight;
+    initProjParticles();
+  }
+
+  pCtx.clearRect(0, 0, projCanvas.width, projCanvas.height);
+
+  for (let i = 0; i < projParticles.length; i++) {
+    projParticles[i].update(projCanvas.width, projCanvas.height);
+    projParticles[i].draw();
+
+    // Connect particles to each other
+    for (let j = i + 1; j < projParticles.length; j++) {
+      const dx = projParticles[i].x - projParticles[j].x;
+      const dy = projParticles[i].y - projParticles[j].y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      if (distance < projConnectionDistance) {
+        pCtx.beginPath();
+        pCtx.moveTo(projParticles[i].x, projParticles[i].y);
+        pCtx.lineTo(projParticles[j].x, projParticles[j].y);
+        const opacity = 1 - distance / projConnectionDistance;
+        pCtx.strokeStyle = `rgba(140, 170, 110, ${opacity * 0.4})`;
+        pCtx.lineWidth = 1;
+        pCtx.stroke();
+      }
+    }
+
+    // Interactive mouse connection and repel effect
+    if (projMouse.x != null && projMouse.y != null) {
+      const dxMouse = projParticles[i].x - projMouse.x;
+      const dyMouse = projParticles[i].y - projMouse.y;
+      const distanceMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
+
+      if (distanceMouse < mouseInteractionRadius) {
+        pCtx.beginPath();
+        pCtx.moveTo(projParticles[i].x, projParticles[i].y);
+        pCtx.lineTo(projMouse.x, projMouse.y);
+        const opacityMouse = 1 - distanceMouse / mouseInteractionRadius;
+        pCtx.strokeStyle = `rgba(140, 170, 110, ${opacityMouse * 0.8})`;
+        pCtx.lineWidth = 1.5;
+        pCtx.stroke();
+
+        // Push particles away slightly (repel effect)
+        const forceDirectionX = dxMouse / distanceMouse;
+        const forceDirectionY = dyMouse / distanceMouse;
+        const force =
+          (mouseInteractionRadius - distanceMouse) / mouseInteractionRadius;
+
+        projParticles[i].x += forceDirectionX * force * 1.5;
+        projParticles[i].y += forceDirectionY * force * 1.5;
+      }
+    }
+  }
+  requestAnimationFrame(animateProjParticles);
+}
+
+animateProjParticles();
+
+// TYPEWRITER EFFECT LOGIC
+const typeWriterElement = document.querySelector(".typewriter-text");
+const typeWriterStrings = [
+  "console.log('Hello World!');",
+  "System.out.println('My Work');",
+  "print('Check out my projects')",
+  "echo 'Welcome to my portfolio!';",
+  "printf('Creative solutions\\n');",
+  "fmt.Println('Making cool things');",
+  "puts 'Turning ideas into reality'",
+  "SELECT * FROM projects;",
+  "<h1>Hello, World!</h1>",
+  "return <Portfolio />;",
+];
+let typeStringIndex = 0;
+let typeCharIndex = 0;
+let isDeleting = false;
+
+function typeWriter() {
+  if (!typeWriterElement) return;
+
+  const currentString = typeWriterStrings[typeStringIndex];
+  let typeSpeed = isDeleting ? 40 : 100;
+
+  if (!isDeleting) {
+    typeWriterElement.textContent = currentString.substring(
+      0,
+      typeCharIndex + 1,
+    );
+    typeCharIndex++;
+  } else {
+    typeWriterElement.textContent = currentString.substring(
+      0,
+      typeCharIndex - 1,
+    );
+    typeCharIndex--;
+  }
+
+  if (!isDeleting && typeCharIndex === currentString.length) {
+    isDeleting = true;
+    typeSpeed = 2000; // Pause at the end of typing
+  } else if (isDeleting && typeCharIndex === 0) {
+    isDeleting = false;
+    typeStringIndex = (typeStringIndex + 1) % typeWriterStrings.length;
+    typeSpeed = 500; // Pause before typing next word
+  }
+
+  setTimeout(typeWriter, typeSpeed);
+}
+
+typeWriter();

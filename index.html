@@ -105,7 +105,18 @@
                 <div class="content">
                     <h2>My Works
                     </h2>
-                    <p1>Kabisado ko na ang tamis ng iyong labi, Kabisado ko na ang oras ng iyong uwi, Di na kailangan pa, Na ikaw ay magsalita aahh</p1>
+                    <div class="action-box projects-action-box">
+                        <div class="typewriter-text"></div>
+                        <p1>Check out my projects.<br>And let me make some more!</p1>
+                        <div class="action-buttons">
+                            <div class="scroll-indicator inline-bounce" onclick="document.querySelector('.details-section').scrollIntoView({behavior: 'smooth'})">
+                                <span>See more</span>
+                                <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -337,10 +348,99 @@
 
             <!-- Projects Details -->
             <div class="detail-item">
+                <!-- Interactive Particles Background -->
+                <div class="projects-bg">
+                    <canvas id="projects-canvas"></canvas>
+                </div>
                 <div class="divider"></div>
                 <div class="details-content">
                     <h3 class="fade-in">My Work</h3>
-                    <p class="fade-in">Add lists, images, or links to your different projects here.</p>
+                    
+                    <!-- PROJECTS CAROUSEL -->
+                    <div class="projects-carousel fade-in">
+                        <div class="carousel-track">
+                            <!-- Project 1: Fitpose -->
+                            <div class="carousel-slide">
+                                <div class="project-image">
+                                    <img src="Media/Fitpose.png" alt="Fitpose Logo">
+                                </div>
+                                <div class="project-details">
+                                    <h4>Fitpose</h4>
+                                    <p class="project-desc">An AI-powered fitness tracking application utilizing Computer Vision to monitor and correct workout postures in real-time.</p>
+                                    <div class="project-tech">
+                                        <span>Python</span><span>OpenCV</span><span>MediaPipe</span>
+                                    </div>
+                                    <p class="project-authors"><strong>Co-Authors:</strong> [Add Names Here]</p>
+                                    <a href="https://github.com/NikkiAbot/FitPose-Application" class="btn" target="_blank">Source Code</a>
+                                </div>
+                            </div>
+                            <!-- Project 2: CardioCompass -->
+                            <div class="carousel-slide">
+                                <div class="project-image">
+                                    <img src="Media/CardioCompass.png" alt="CardioCompass Logo">
+                                </div>
+                                <div class="project-details">
+                                    <h4>CardioCompass</h4>
+                                    <p class="project-desc">An interactive cardiovascular health application designed to help users navigate their fitness journey and monitor heart metrics.</p>
+                                    <div class="project-tech">
+                                        <span>Java</span><span>Android Studio</span><span>Firebase</span>
+                                    </div>
+                                    <p class="project-authors"><strong>Co-Authors:</strong> [Add Names Here]</p>
+                                    <a href="https://github.com/Bermillo/CardioCompass" class="btn" target="_blank">Source Code</a>
+                                </div>
+                            </div>
+                            <!-- Project 3: Reliance Producers Cooperative -->
+                            <div class="carousel-slide">
+                                <div class="project-image">
+                                    <img src="Media/RPC.png" alt="Reliance Producers Cooperative Logo">
+                                </div>
+                                <div class="project-details">
+                                    <h4>Reliance Producers Cooperative</h4>
+                                    <p class="project-desc">A fully functional corporate website designed, developed, and deployed during a professional practicum to enhance online visibility.</p>
+                                    <div class="project-tech">
+                                        <span>WordPress</span><span>PHP</span><span>CSS</span>
+                                    </div>
+                                    <p class="project-authors"><strong>Co-Authors:</strong> Solo Project</p>
+                                    <a href="https://rpc.com.ph/" class="btn" target="_blank">Visit Website</a>
+                                </div>
+                            </div>
+                            <!-- Project 4: My Portfolio -->
+                            <div class="carousel-slide">
+                                <div class="project-image">
+                                    <img src="Media/Logo.png" alt="Aperture Portfolio Logo">
+                                </div>
+                                <div class="project-details">
+                                    <h4>Aperture Portfolio</h4>
+                                    <p class="project-desc">A sleek, minimalist, and responsive personal portfolio showcasing my projects, skills, and professional journey with smooth animations.</p>
+                                    <div class="project-tech">
+                                        <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                                    </div>
+                                    <p class="project-authors"><strong>Co-Authors:</strong> Solo Project</p>
+                                    <a href="https://github.com/NikkiAbot/Aperture" class="btn" target="_blank">Source Code</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Carousel Controls -->
+                        <button class="proj-ctrl prev" aria-label="Previous Project">
+                            <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/>
+                            </svg>
+                        </button>
+                        <button class="proj-ctrl next" aria-label="Next Project">
+                            <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
+                            </svg>
+                        </button>
+                        
+                        <!-- Carousel Indicators -->
+                        <div class="proj-indicators">
+                            <span class="dot active" data-index="0"></span>
+                            <span class="dot" data-index="1"></span>
+                            <span class="dot" data-index="2"></span>
+                            <span class="dot" data-index="3"></span>
+                        </div>
+                    </div>
 
                     <!-- SOCIAL FOOTER -->
                     <footer class="social-footer fade-in">

@@ -274,7 +274,8 @@ header .logo .logo-text {
   gap: 15px;
 }
 
-.about-action-box .social-links a {
+.about-action-box .social-links a,
+.contact-action-box .social-links a {
   width: 40px;
   height: 40px;
 }
@@ -321,11 +322,12 @@ header .logo .logo-text {
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   padding: 35px 40px;
-  z-index: 1 !important; /* Puts the box behind me.png */
-  width: 500px !important;
+  z-index: 3 !important; /* Brings the box in front of me.png */
+  width: 450px !important;
   margin-left: auto;
-  position: relative;
-  right: -100px; /* Pushes the box far to the right */
+  grid-column: 2;
+  grid-row: 1 / 4;
+  align-self: center;
 }
 
 /* Contact Form Styling */
@@ -333,6 +335,19 @@ header .logo .logo-text {
   display: flex;
   flex-direction: column;
   gap: 15px;
+}
+
+.contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  text-align: left;
+}
+
+.contact-form label {
+  font-family: Poppins, sans-serif;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .contact-form input,
@@ -346,7 +361,10 @@ header .logo .logo-text {
   font-family: Poppins, sans-serif;
   font-size: 1rem;
   outline: none;
-  transition: border-color 0.3s;
+  transition:
+    border-color 0.3s,
+    color 0.5s ease,
+    text-shadow 0.5s ease;
 }
 
 .contact-form input::placeholder,
@@ -359,6 +377,44 @@ header .logo .logo-text {
   border-color: rgba(255, 255, 255, 0.5);
 }
 
+/* Dissolve text animation */
+.contact-form input.dissolve,
+.contact-form textarea.dissolve {
+  color: transparent !important;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+/* Success Popup Animation */
+.success-popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  background: rgba(0, 0, 0, 0.65);
+  color: #eee;
+  padding: 12px 25px;
+  border-radius: 30px; /* Sleek pill shape */
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+.success-popup.show {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
 .contact-form textarea {
   resize: none;
 }
@@ -369,42 +425,52 @@ header .logo .logo-text {
   font-size: 1.05rem;
 }
 
-/* Contact Grid Styling (6 Boxes) */
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
-}
-
-.contact-box {
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  padding: 15px 5px;
+/* Contact Info Left Styling */
+.contact-info-left {
   display: flex;
   flex-direction: column;
+  gap: 25px;
+  grid-column: 1;
+  grid-row: 3;
+  align-self: start;
+  position: relative;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.slider .list .item.active .contact-info-left {
+  opacity: 1;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-family: Poppins, sans-serif;
+  font-size: 1rem;
+  color: #eee;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.icon-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  color: #eee;
-  font-size: 0.8rem;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  gap: 10px;
-  font-family: Poppins, sans-serif;
-  cursor: pointer;
-  word-break: break-word;
+  backdrop-filter: blur(10px);
+  flex-shrink: 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.contact-box:hover {
-  background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-3px);
-  color: #fff;
-}
-
-.contact-box svg {
+.icon-circle svg {
   width: 24px;
   height: 24px;
+  color: #fff;
 }
 
 .slider .list .item.active .content .action-box {
@@ -1743,8 +1809,10 @@ header .logo .logo-text {
     white-space: normal;
     word-break: break-word;
   }
-  .contact-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .contact-info-left {
+    align-items: flex-start;
+    padding-left: 0;
+    margin-top: 0;
   }
   /* Prevent me.png from overlapping content above it */
   .slider .list::after {

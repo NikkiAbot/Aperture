@@ -28,12 +28,12 @@
               <path
                 stroke="currentColor"
                 stroke-linecap="round"
-                stroke-width="2"  
+                stroke-width="2"
                 d="M5 7h14M5 12h14M5 17h14"
               />
             </svg>
           </button>
-          
+
           <ul class="nav-menu" id="nav-menu">
             <li data-index="0">Home</li>
             <li data-index="1">About Me</li>
@@ -41,436 +41,993 @@
             <li data-index="3">Contact Me</li>
           </ul>
         </nav>
+
+        <!-- EmailJS SDK -->
+        <script
+          type="text/javascript"
+          src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+        ></script>
+        <script type="text/javascript">
+          (function () {
+            emailjs.init({
+              publicKey: "MD46CptGiXk7LzVHj",
+            });
+          })();
+        </script>
       </header>
 
       <!-- SLIDER SECTION -->
       <section class="slider">
         <div class="list">
-            <!-- Home Item -->
-            <div class="item active">
-                <div class="image animated-bg bg-home">
-                    <div class="blob blob-1"></div>
-                    <div class="blob blob-2"></div>
-                    <div class="blob blob-3"></div>
-                </div>
-                <div class="content">
-                    <h2>Hi, Im Nikki Abot</h2>
-                    <p1>I’m a developer and designer who loves mixing AI "brains" with beautiful visuals. Whether it's Computer Vision or fresh graphics, I build things that are smart, intuitive, and easy on the eyes. Let’s create something cool!</p1>
-                    <p2>Frontend developer and Designer  </p2>
-                </div>
+          <!-- Home Item -->
+          <div class="item active">
+            <div class="image animated-bg bg-home">
+              <div class="blob blob-1"></div>
+              <div class="blob blob-2"></div>
+              <div class="blob blob-3"></div>
             </div>
-            
-            <!-- About Item -->
-            <div class="item">
-                <div class="image animated-bg bg-about">
-                    <div class="node node-1"></div>
-                    <div class="node node-2"></div>
-                    <div class="node node-3"></div>
-                </div>
-                <div class="content">
-                    <h2>More About Me</h2>
-                    <div class="action-box about-action-box">
-                        <div class="social-links">
-                            <a href="https://github.com/NikkiAbot" target="_blank" aria-label="GitHub">
-                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.392 6.477 10.514 10.514 0 0 0 3.106 8.35c.5.112.905.158 1.137.168a.747.747 0 0 0 .668-.456l.034-.093c.038-.113.111-.343.197-.732.1-.453.228-1.077.262-1.464-1.29.248-2.195-.45-2.61-1.045-.25-.357-.492-.792-.727-1.127-.19-.272-.346-.574-.556-.814-.143-.163-.122-.392.05-.444.156-.046.43-.053.642.062.298.163.535.43.763.755.204.288.423.636.712.872.245.2.535.308.84.308.277 0 .532-.07.756-.192.115-.469.317-.872.585-1.185-1.928-.216-3.816-.948-3.816-4.088 0-.904.316-1.64.832-2.22-.083-.204-.36-1.054.08-2.19.7-.225 2.316.852 2.366.883a8.311 8.311 0 0 1 2.222-.298c.753 0 1.503.1 2.22.296.05-.03 1.666-1.115 2.366-.883.443 1.14.167 1.996.08 2.2.518.583.834 1.324.834 2.228 0 3.15-1.892 3.869-3.824 4.082.317.292.597.838.597 1.532 0 .673-.012 1.398-.016 1.764a.71.71 0 0 0 .633.486c.224-.012.63-.06 1.125-.17a10.528 10.528 0 0 0 3.11-8.358 10.323 10.323 0 0 0-3.398-6.475A9.845 9.845 0 0 0 12.006 2Z" clip-rule="evenodd"/></svg>
-                            </a>
-                            <a href="https://www.linkedin.com/in/nicolei-faith-abot-89b668337/" target="_blank" aria-label="LinkedIn">
-                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-1.61 1.61h-.032a1.61 1.61 0 1 1 1.642-1.61Zm-1.622 13.394h3.193V8.796H5.578v10.704Z" clip-rule="evenodd"/></svg>
-                            </a>
-                            <a href="https://www.facebook.com/nicoleifaith.abot" target="_blank" aria-label="Facebook">
-                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z" clip-rule="evenodd"/></svg>
-                            </a>
-                        </div>
-                        <p1>Wanna know more about me?<br>Check out my resume!</p1>
-                        <div class="action-buttons">
-                            <a href="https://drive.google.com/uc?export=download&id=1FD-wVs-PPcSuVE3M7Mfz28XjS1TZ6Kr9" class="btn" download>Download My Resume</a>
-                            <div class="scroll-indicator inline-bounce" onclick="document.querySelector('.details-section').scrollIntoView({behavior: 'smooth'})">
-                                <span>Read More</span>
-                                <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="content">
+              <h2>Hi, Im Nikki Abot</h2>
+              <p1
+                >I’m a developer and designer who loves mixing AI "brains" with
+                beautiful visuals. Whether it's Computer Vision or fresh
+                graphics, I build things that are smart, intuitive, and easy on
+                the eyes. Let’s create something cool!</p1
+              >
+              <p2>Frontend developer and Designer </p2>
             </div>
+          </div>
 
-            <!-- Projects Item -->
-            <div class="item">
-                <div class="image animated-bg bg-projects">
-                    <div class="wave wave-1"></div>
-                    <div class="wave wave-2"></div>
-                    <div class="wave wave-3"></div>
-                </div>
-                <div class="content">
-                    <h2>My Works
-                    </h2>
-                    <div class="action-box projects-action-box">
-                        <div class="typewriter-text"></div>
-                        <p1>Check out my projects.<br>And let me make some more!</p1>
-                        <div class="action-buttons">
-                            <div class="scroll-indicator inline-bounce" onclick="document.querySelector('.details-section').scrollIntoView({behavior: 'smooth'})">
-                                <span>See more</span>
-                                <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 9-7 7-7-7"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <!-- About Item -->
+          <div class="item">
+            <div class="image animated-bg bg-about">
+              <div class="node node-1"></div>
+              <div class="node node-2"></div>
+              <div class="node node-3"></div>
             </div>
-
-            <!-- Contact Item -->
-            <div class="item">
-                <div class="image animated-bg bg-contact">
-                    <div class="spark spark-1"></div>
-                    <div class="spark spark-2"></div>
-                    <div class="spark spark-3"></div>
-                </div>
-                <div class="content">
-                    <h2>Get In Touch</h2>
-                    <div class="action-box contact-action-box">
-                        <form class="contact-form" onsubmit="event.preventDefault();">
-                            <input type="text" placeholder="Your Name" required>
-                            <input type="email" placeholder="Your Email" required>
-                            <textarea placeholder="Your Message" rows="3" required></textarea>
-                            <button type="submit" class="btn">Send Message</button>
-                        </form>
-                        <div class="contact-grid">
-                            <div class="contact-box">
-                                <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0 0a8.949 8.949 0 0 0 4.951-1.488A3.987 3.987 0 0 0 13 16h-2a3.987 3.987 0 0 0-3.951 3.512A8.949 8.949 0 0 0 12 21Zm3-11a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/></svg>
-                                <span>Nicolei Faith Abot</span>
-                            </div>
-                            <div class="contact-box">
-                                <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m3.5 5.5 7.893 6.036a1 1 0 0 0 1.214 0L20.5 5.5M4 19h16a1 1 0 0 0 1-1V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1Z"/></svg>
-                                <span>abotnicoleifaith@gmail.com</span>
-                            </div>
-                            <div class="contact-box">
-                                <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/><path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.8 13.938h-.011a7 7 0 1 0-11.464.144h-.016l.14.171c.1.127.2.251.3.371L12 21l5.13-6.248c.194-.209.374-.429.54-.659l.13-.155Z"/></svg>
-                                <span>Imus, Cavite, Ph</span>
-                            </div>
-                            <a href="https://github.com/NikkiAbot" target="_blank" class="contact-box">
-                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.392 6.477 10.514 10.514 0 0 0 3.106 8.35c.5.112.905.158 1.137.168a.747.747 0 0 0 .668-.456l.034-.093c.038-.113.111-.343.197-.732.1-.453.228-1.077.262-1.464-1.29.248-2.195-.45-2.61-1.045-.25-.357-.492-.792-.727-1.127-.19-.272-.346-.574-.556-.814-.143-.163-.122-.392.05-.444.156-.046.43-.053.642.062.298.163.535.43.763.755.204.288.423.636.712.872.245.2.535.308.84.308.277 0 .532-.07.756-.192.115-.469.317-.872.585-1.185-1.928-.216-3.816-.948-3.816-4.088 0-.904.316-1.64.832-2.22-.083-.204-.36-1.054.08-2.19.7-.225 2.316.852 2.366.883a8.311 8.311 0 0 1 2.222-.298c.753 0 1.503.1 2.22.296.05-.03 1.666-1.115 2.366-.883.443 1.14.167 1.996.08 2.2.518.583.834 1.324.834 2.228 0 3.15-1.892 3.869-3.824 4.082.317.292.597.838.597 1.532 0 .673-.012 1.398-.016 1.764a.71.71 0 0 0 .633.486c.224-.012.63-.06 1.125-.17a10.528 10.528 0 0 0 3.11-8.358 10.323 10.323 0 0 0-3.398-6.475A9.845 9.845 0 0 0 12.006 2Z" clip-rule="evenodd"/></svg>
-                                <span>GitHub</span>
-                            </a>
-                            <a href="https://www.linkedin.com/in/nicolei-faith-abot-89b668337/" target="_blank" class="contact-box">
-                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-1.61 1.61h-.032a1.61 1.61 0 1 1 1.642-1.61Zm-1.622 13.394h3.193V8.796H5.578v10.704Z" clip-rule="evenodd"/></svg>
-                                <span>LinkedIn</span>
-                            </a>
-                            <a href="https://www.facebook.com/nicoleifaith.abot" target="_blank" class="contact-box">
-                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z" clip-rule="evenodd"/></svg>
-                                <span>Facebook</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- End -->
-
-            <!-- Navigation Buttons -->
-             <div class="arrows">
-                <!-- Previous Buttons -->
-                <button id="prev">
-                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/>
+            <div class="content">
+              <h2>More About Me</h2>
+              <div class="action-box about-action-box">
+                <div class="social-links">
+                  <a
+                    href="https://github.com/NikkiAbot"
+                    target="_blank"
+                    aria-label="GitHub"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.392 6.477 10.514 10.514 0 0 0 3.106 8.35c.5.112.905.158 1.137.168a.747.747 0 0 0 .668-.456l.034-.093c.038-.113.111-.343.197-.732.1-.453.228-1.077.262-1.464-1.29.248-2.195-.45-2.61-1.045-.25-.357-.492-.792-.727-1.127-.19-.272-.346-.574-.556-.814-.143-.163-.122-.392.05-.444.156-.046.43-.053.642.062.298.163.535.43.763.755.204.288.423.636.712.872.245.2.535.308.84.308.277 0 .532-.07.756-.192.115-.469.317-.872.585-1.185-1.928-.216-3.816-.948-3.816-4.088 0-.904.316-1.64.832-2.22-.083-.204-.36-1.054.08-2.19.7-.225 2.316.852 2.366.883a8.311 8.311 0 0 1 2.222-.298c.753 0 1.503.1 2.22.296.05-.03 1.666-1.115 2.366-.883.443 1.14.167 1.996.08 2.2.518.583.834 1.324.834 2.228 0 3.15-1.892 3.869-3.824 4.082.317.292.597.838.597 1.532 0 .673-.012 1.398-.016 1.764a.71.71 0 0 0 .633.486c.224-.012.63-.06 1.125-.17a10.528 10.528 0 0 0 3.11-8.358 10.323 10.323 0 0 0-3.398-6.475A9.845 9.845 0 0 0 12.006 2Z"
+                        clip-rule="evenodd"
+                      />
                     </svg>
-                    <span></span>
-                </button>
-                <!-- Next Buttons -->
-                <button id="next">
-                    <span></span>
-                    <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/nicolei-faith-abot-89b668337/"
+                    target="_blank"
+                    aria-label="LinkedIn"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-1.61 1.61h-.032a1.61 1.61 0 1 1 1.642-1.61Zm-1.622 13.394h3.193V8.796H5.578v10.704Z"
+                        clip-rule="evenodd"
+                      />
                     </svg>
-                </button>
-             </div>
+                  </a>
+                  <a
+                    href="https://www.facebook.com/nicoleifaith.abot"
+                    target="_blank"
+                    aria-label="Facebook"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </a>
+                </div>
+                <p1>Wanna know more about me?<br />Check out my resume!</p1>
+                <div class="action-buttons">
+                  <a
+                    href="https://drive.google.com/uc?export=download&id=1FD-wVs-PPcSuVE3M7Mfz28XjS1TZ6Kr9"
+                    class="btn"
+                    download
+                    >Download My Resume</a
+                  >
+                  <div
+                    class="scroll-indicator inline-bounce"
+                    onclick="
+                      document
+                        .querySelector('.details-section')
+                        .scrollIntoView({ behavior: 'smooth' })
+                    "
+                  >
+                    <span>Read More</span>
+                    <svg
+                      class="w-6 h-6"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m19 9-7 7-7-7"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-        </div>
+          <!-- Projects Item -->
+          <div class="item">
+            <div class="image animated-bg bg-projects">
+              <div class="wave wave-1"></div>
+              <div class="wave wave-2"></div>
+              <div class="wave wave-3"></div>
+            </div>
+            <div class="content">
+              <h2>My Works</h2>
+              <div class="action-box projects-action-box">
+                <div class="typewriter-text"></div>
+                <p1>Check out my projects.<br />And let me make some more!</p1>
+                <div class="action-buttons">
+                  <div
+                    class="scroll-indicator inline-bounce"
+                    onclick="
+                      document
+                        .querySelector('.details-section')
+                        .scrollIntoView({ behavior: 'smooth' })
+                    "
+                  >
+                    <span>See more</span>
+                    <svg
+                      class="w-6 h-6"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m19 9-7 7-7-7"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Item -->
+          <div class="item">
+            <div class="image animated-bg bg-contact">
+              <div class="spark spark-1"></div>
+              <div class="spark spark-2"></div>
+              <div class="spark spark-3"></div>
+            </div>
+            <div class="content">
+              <h2>Contact Me</h2>
+              <div class="contact-info-left">
+                <div class="info-item">
+                  <div class="icon-circle">
+                    <svg
+                      class="w-6 h-6"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0 0a8.949 8.949 0 0 0 4.951-1.488A3.987 3.987 0 0 0 13 16h-2a3.987 3.987 0 0 0-3.951 3.512A8.949 8.949 0 0 0 12 21Zm3-11a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                      />
+                    </svg>
+                  </div>
+                  <span>Nicolei Faith Abot</span>
+                </div>
+                <div class="info-item">
+                  <div class="icon-circle">
+                    <svg
+                      class="w-6 h-6"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    </svg>
+                  </div>
+                  <span>abotnicoleifaith@gmail.com</span>
+                </div>
+                <div class="info-item">
+                  <div class="icon-circle">
+                    <svg
+                      class="w-6 h-6"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
+                      />
+                      <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17.8 13.938h-.011a7 7 0 1 0-11.464.144h-.016l.14.171c.1.127.2.251.3.371L12 21l5.13-6.248c.194-.209.374-.429.54-.659l.13-.155Z"
+                      />
+                    </svg>
+                  </div>
+                  <span>Imus, Cavite, Ph</span>
+                </div>
+              </div>
+              <div class="action-box contact-action-box">
+                <form class="contact-form" id="contact-form">
+                  <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required />
+                  </div>
+                  <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows="4"
+                      required
+                    ></textarea>
+                  </div>
+                  <button type="submit" class="btn">Send</button>
+                </form>
+
+                <!-- Success Popup -->
+                <div id="success-popup" class="success-popup">
+                  Message sent successfully.
+                </div>
+
+                <div class="social-links">
+                  <a
+                    href="https://github.com/NikkiAbot"
+                    target="_blank"
+                    aria-label="GitHub"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.392 6.477 10.514 10.514 0 0 0 3.106 8.35c.5.112.905.158 1.137.168a.747.747 0 0 0 .668-.456l.034-.093c.038-.113.111-.343.197-.732.1-.453.228-1.077.262-1.464-1.29.248-2.195-.45-2.61-1.045-.25-.357-.492-.792-.727-1.127-.19-.272-.346-.574-.556-.814-.143-.163-.122-.392.05-.444.156-.046.43-.053.642.062.298.163.535.43.763.755.204.288.423.636.712.872.245.2.535.308.84.308.277 0 .532-.07.756-.192.115-.469.317-.872.585-1.185-1.928-.216-3.816-.948-3.816-4.088 0-.904.316-1.64.832-2.22-.083-.204-.36-1.054.08-2.19.7-.225 2.316.852 2.366.883a8.311 8.311 0 0 1 2.222-.298c.753 0 1.503.1 2.22.296.05-.03 1.666-1.115 2.366-.883.443 1.14.167 1.996.08 2.2.518.583.834 1.324.834 2.228 0 3.15-1.892 3.869-3.824 4.082.317.292.597.838.597 1.532 0 .673-.012 1.398-.016 1.764a.71.71 0 0 0 .633.486c.224-.012.63-.06 1.125-.17a10.528 10.528 0 0 0 3.11-8.358 10.323 10.323 0 0 0-3.398-6.475A9.845 9.845 0 0 0 12.006 2Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/nicolei-faith-abot-89b668337/"
+                    target="_blank"
+                    aria-label="LinkedIn"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-1.61 1.61h-.032a1.61 1.61 0 1 1 1.642-1.61Zm-1.622 13.394h3.193V8.796H5.578v10.704Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    href="https://www.facebook.com/nicoleifaith.abot"
+                    target="_blank"
+                    aria-label="Facebook"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End -->
+
+          <!-- Navigation Buttons -->
+          <div class="arrows">
+            <!-- Previous Buttons -->
+            <button id="prev">
+              <svg
+                class="w-6 h-6 text-gray-800 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m15 19-7-7 7-7"
+                />
+              </svg>
+              <span></span>
+            </button>
+            <!-- Next Buttons -->
+            <button id="next">
+              <span></span>
+              <svg
+                class="w-6 h-6 text-gray-800 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m9 5 7 7-7 7"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
       </section>
 
       <!-- DETAILS SECTION (SCROLL DOWN CONTENT) -->
       <section class="details-section">
         <div class="details-list">
-            <!-- Home Details -->
-            <div class="detail-item active">
-                <!-- Left empty so the Home page doesn't have extra scroll content -->
+          <!-- Home Details -->
+          <div class="detail-item active">
+            <!-- Left empty so the Home page doesn't have extra scroll content -->
+          </div>
+
+          <!-- About Details -->
+          <div class="detail-item">
+            <!-- Subtle Nodes Animation Background -->
+            <div class="nodes-bg">
+              <canvas id="nodes-canvas"></canvas>
             </div>
-            
-            <!-- About Details -->
-            <div class="detail-item">
-                <!-- Subtle Nodes Animation Background -->
-                <div class="nodes-bg">
-                    <canvas id="nodes-canvas"></canvas>
+            <div class="divider"></div>
+            <div class="details-content">
+              <div class="about-container">
+                <div class="about-image fade-in">
+                  <img
+                    src="Media/Profile.png"
+                    alt="Nikki Abot"
+                    loading="lazy"
+                  />
                 </div>
-                <div class="divider"></div>
-                <div class="details-content">
-                    <div class="about-container">
-                        <div class="about-image fade-in">
-                            <img src="Media/Profile.png" alt="Nikki Abot" loading="lazy">
-                        </div>
-                        <div class="about-content">
-                            <h3 class="fade-in">About Me</h3>
-                            <p class="fade-in">Hello! I'm Nicolei Faith Abot, a passionate Front-End Developer and Designer based in the Philippines. I love building beautiful, functional, and accessible digital products. My journey in tech started with curiosity and has grown into a career focused on creating meaningful user experiences. My journey has taken me from developing computer-vision systems for fitness tracking to crafting brand identities for local businesses. I’m a firm believer in "learning by doing" and love the challenge of picking up new frameworks to solve real-world problems.</p>
-                            <ul class="about-list fade-in">
-                                <li><strong>Location:</strong> Imus City, Cavite, Philippines</li>
-                                <li><strong>Email:</strong> abotnicoleifaith@gmail.com</li>
-                                <li><strong>Interests:</strong> UI/UX, AI, Fitness, Music, Community</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- EDUCATION SECTION -->
-                    <div class="education-section">
-                        <h3 class="fade-in">Education</h3>
-                        <div class="education-content fade-in">
-                            <h4>De La Salle University – Dasmariñas</h4>
-                            <p class="degree">Bachelor of Science in Computer Science, Major in Intelligent Systems <span>(2022 - 2026)</span></p>
-                            <ul>
-                                <li><strong>Relevant Coursework:</strong> Artificial Intelligence, Computer Vision, Machine Learning, Natural Language Processing, Algorithms and Data Structure</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- WORK EXPERIENCE SECTION -->
-                    <div class="experience-section">
-                        <h3 class="fade-in">Work Experience</h3>
-                        <div class="timeline">
-                            <!-- Item 1 -->
-                            <div class="timeline-item left fade-in">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <h4>Freelance Graphic Designer</h4>
-                                    <p class="timeline-date">2024 – 2026</p>
-                                    <ul>
-                                        <li>Developed comprehensive brand identities and marketing materials, including custom logos and social media assets, to enhance client visibility.</li>
-                                        <li>Produced high-quality digital and print designs using Canva, ensuring strict alignment with client specifications, branding guidelines, and project deadlines.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- Item 2 -->
-                            <div class="timeline-item right fade-in">
-                                <div class="timeline-dot"></div>
-                                <div class="timeline-content">
-                                    <h4>Website Designer (WordPress)</h4>
-                                    <p class="timeline-company"><a href="https://rpc.com.ph/" target="_blank">Reliance Producers Cooperative</a></p>
-                                    <p class="timeline-date">June 2025 – August 2025</p>
-                                    <ul>
-                                        <li>Designed, developed, and deployed a fully functional corporate website using WordPress during a professional practicum.</li>
-                                        <li>Customized site architecture, implemented necessary plugins, and ensured responsive design to optimize the user experience across all devices.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- SKILLS SECTION -->
-                    <div class="skills-section">
-                        <h3 class="fade-in">What I Do</h3>
-                        <p class="fade-in">I leverage a variety of programming languages, frameworks, and platforms to build everything from intelligent backend systems to engaging, responsive user interfaces. Here are the core technologies I work with:</p>
-                        <div class="skills-grid fade-in">
-                            <div class="skill-item">
-                                <img src="Media/python.png" alt="Python" class="skill-logo">
-                                <div class="skill-info">
-                                    <div class="skill-name">Python</div>
-                                    <div class="progress-bar"><div class="progress" style="width: 95%;"></div></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <img src="Media/flutter.png" alt="Flutter" class="skill-logo">
-                                <div class="skill-info">
-                                    <div class="skill-name">Flutter</div>
-                                    <div class="progress-bar"><div class="progress" style="width: 85%;"></div></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <img src="Media/html.png" alt="HTML" class="skill-logo">
-                                <div class="skill-info">
-                                    <div class="skill-name">HTML</div>
-                                    <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <img src="Media/css.png" alt="CSS" class="skill-logo">
-                                <div class="skill-info">
-                                    <div class="skill-name">CSS</div>
-                                    <div class="progress-bar"><div class="progress" style="width: 75%;"></div></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <img src="Media/javascript.png" alt="JavaScript" class="skill-logo">
-                                <div class="skill-info">
-                                    <div class="skill-name">JavaScript</div>
-                                    <div class="progress-bar"><div class="progress" style="width: 70%;"></div></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <img src="Media/wordpress.png" alt="WordPress" class="skill-logo">
-                                <div class="skill-info">
-                                    <div class="skill-name">WordPress</div>
-                                    <div class="progress-bar"><div class="progress" style="width: 65%;"></div></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <img src="Media/wix.png" alt="Wix" class="skill-logo">
-                                <div class="skill-info">
-                                    <div class="skill-name">Wix</div>
-                                    <div class="progress-bar"><div class="progress" style="width: 60%;"></div></div>
-                                </div>
-                            </div>
-                            <div class="skill-item">
-                                <img src="Media/php.png" alt="PHP" class="skill-logo">
-                                <div class="skill-info">
-                                    <div class="skill-name">PHP</div>
-                                    <div class="progress-bar"><div class="progress" style="width: 55%;"></div></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- SOCIAL FOOTER -->
-                    <footer class="social-footer fade-in">
-                        <p>Connect with me</p>
-                        <div class="social-links">
-                            <a href="https://github.com/NikkiAbot" target="_blank" aria-label="GitHub">
-                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.392 6.477 10.514 10.514 0 0 0 3.106 8.35c.5.112.905.158 1.137.168a.747.747 0 0 0 .668-.456l.034-.093c.038-.113.111-.343.197-.732.1-.453.228-1.077.262-1.464-1.29.248-2.195-.45-2.61-1.045-.25-.357-.492-.792-.727-1.127-.19-.272-.346-.574-.556-.814-.143-.163-.122-.392.05-.444.156-.046.43-.053.642.062.298.163.535.43.763.755.204.288.423.636.712.872.245.2.535.308.84.308.277 0 .532-.07.756-.192.115-.469.317-.872.585-1.185-1.928-.216-3.816-.948-3.816-4.088 0-.904.316-1.64.832-2.22-.083-.204-.36-1.054.08-2.19.7-.225 2.316.852 2.366.883a8.311 8.311 0 0 1 2.222-.298c.753 0 1.503.1 2.22.296.05-.03 1.666-1.115 2.366-.883.443 1.14.167 1.996.08 2.2.518.583.834 1.324.834 2.228 0 3.15-1.892 3.869-3.824 4.082.317.292.597.838.597 1.532 0 .673-.012 1.398-.016 1.764a.71.71 0 0 0 .633.486c.224-.012.63-.06 1.125-.17a10.528 10.528 0 0 0 3.11-8.358 10.323 10.323 0 0 0-3.398-6.475A9.845 9.845 0 0 0 12.006 2Z" clip-rule="evenodd"/></svg>
-                            </a>
-                            <a href="https://www.linkedin.com/in/nicolei-faith-abot-89b668337/" target="_blank" aria-label="LinkedIn">
-                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-1.61 1.61h-.032a1.61 1.61 0 1 1 1.642-1.61Zm-1.622 13.394h3.193V8.796H5.578v10.704Z" clip-rule="evenodd"/></svg>
-                            </a>
-                            <a href="https://www.facebook.com/nicoleifaith.abot" target="_blank" aria-label="Facebook">
-                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z" clip-rule="evenodd"/></svg>
-                            </a>
-                        </div>
-                    </footer>
+                <div class="about-content">
+                  <h3 class="fade-in">About Me</h3>
+                  <p class="fade-in">
+                    Hello! I'm Nicolei Faith Abot, a passionate Front-End
+                    Developer and Designer based in the Philippines. I love
+                    building beautiful, functional, and accessible digital
+                    products. My journey in tech started with curiosity and has
+                    grown into a career focused on creating meaningful user
+                    experiences. My journey has taken me from developing
+                    computer-vision systems for fitness tracking to crafting
+                    brand identities for local businesses. I’m a firm believer
+                    in "learning by doing" and love the challenge of picking up
+                    new frameworks to solve real-world problems.
+                  </p>
+                  <ul class="about-list fade-in">
+                    <li>
+                      <strong>Location:</strong> Imus City, Cavite, Philippines
+                    </li>
+                    <li><strong>Email:</strong> abotnicoleifaith@gmail.com</li>
+                    <li>
+                      <strong>Interests:</strong> UI/UX, AI, Fitness, Music,
+                      Community
+                    </li>
+                  </ul>
                 </div>
+              </div>
+
+              <!-- EDUCATION SECTION -->
+              <div class="education-section">
+                <h3 class="fade-in">Education</h3>
+                <div class="education-content fade-in">
+                  <h4>De La Salle University – Dasmariñas</h4>
+                  <p class="degree">
+                    Bachelor of Science in Computer Science, Major in
+                    Intelligent Systems <span>(2022 - 2026)</span>
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>Relevant Coursework:</strong> Artificial
+                      Intelligence, Computer Vision, Machine Learning, Natural
+                      Language Processing, Algorithms and Data Structure
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- WORK EXPERIENCE SECTION -->
+              <div class="experience-section">
+                <h3 class="fade-in">Work Experience</h3>
+                <div class="timeline">
+                  <!-- Item 1 -->
+                  <div class="timeline-item left fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                      <h4>Freelance Graphic Designer</h4>
+                      <p class="timeline-date">2024 – 2026</p>
+                      <ul>
+                        <li>
+                          Developed comprehensive brand identities and marketing
+                          materials, including custom logos and social media
+                          assets, to enhance client visibility.
+                        </li>
+                        <li>
+                          Produced high-quality digital and print designs using
+                          Canva, ensuring strict alignment with client
+                          specifications, branding guidelines, and project
+                          deadlines.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- Item 2 -->
+                  <div class="timeline-item right fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                      <h4>Website Designer (WordPress)</h4>
+                      <p class="timeline-company">
+                        <a href="https://rpc.com.ph/" target="_blank"
+                          >Reliance Producers Cooperative</a
+                        >
+                      </p>
+                      <p class="timeline-date">June 2025 – August 2025</p>
+                      <ul>
+                        <li>
+                          Designed, developed, and deployed a fully functional
+                          corporate website using WordPress during a
+                          professional practicum.
+                        </li>
+                        <li>
+                          Customized site architecture, implemented necessary
+                          plugins, and ensured responsive design to optimize the
+                          user experience across all devices.
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SKILLS SECTION -->
+              <div class="skills-section">
+                <h3 class="fade-in">What I Do</h3>
+                <p class="fade-in">
+                  I leverage a variety of programming languages, frameworks, and
+                  platforms to build everything from intelligent backend systems
+                  to engaging, responsive user interfaces. Here are the core
+                  technologies I work with:
+                </p>
+                <div class="skills-grid fade-in">
+                  <div class="skill-item">
+                    <img
+                      src="Media/python.png"
+                      alt="Python"
+                      class="skill-logo"
+                    />
+                    <div class="skill-info">
+                      <div class="skill-name">Python</div>
+                      <div class="progress-bar">
+                        <div class="progress" style="width: 95%"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <img
+                      src="Media/flutter.png"
+                      alt="Flutter"
+                      class="skill-logo"
+                    />
+                    <div class="skill-info">
+                      <div class="skill-name">Flutter</div>
+                      <div class="progress-bar">
+                        <div class="progress" style="width: 85%"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <img src="Media/html.png" alt="HTML" class="skill-logo" />
+                    <div class="skill-info">
+                      <div class="skill-name">HTML</div>
+                      <div class="progress-bar">
+                        <div class="progress" style="width: 80%"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <img src="Media/css.png" alt="CSS" class="skill-logo" />
+                    <div class="skill-info">
+                      <div class="skill-name">CSS</div>
+                      <div class="progress-bar">
+                        <div class="progress" style="width: 75%"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <img
+                      src="Media/javascript.png"
+                      alt="JavaScript"
+                      class="skill-logo"
+                    />
+                    <div class="skill-info">
+                      <div class="skill-name">JavaScript</div>
+                      <div class="progress-bar">
+                        <div class="progress" style="width: 70%"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <img
+                      src="Media/wordpress.png"
+                      alt="WordPress"
+                      class="skill-logo"
+                    />
+                    <div class="skill-info">
+                      <div class="skill-name">WordPress</div>
+                      <div class="progress-bar">
+                        <div class="progress" style="width: 65%"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <img src="Media/wix.png" alt="Wix" class="skill-logo" />
+                    <div class="skill-info">
+                      <div class="skill-name">Wix</div>
+                      <div class="progress-bar">
+                        <div class="progress" style="width: 60%"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="skill-item">
+                    <img src="Media/php.png" alt="PHP" class="skill-logo" />
+                    <div class="skill-info">
+                      <div class="skill-name">PHP</div>
+                      <div class="progress-bar">
+                        <div class="progress" style="width: 55%"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- SOCIAL FOOTER -->
+              <footer class="social-footer fade-in">
+                <p>Connect with me</p>
+                <div class="social-links">
+                  <a
+                    href="https://github.com/NikkiAbot"
+                    target="_blank"
+                    aria-label="GitHub"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.392 6.477 10.514 10.514 0 0 0 3.106 8.35c.5.112.905.158 1.137.168a.747.747 0 0 0 .668-.456l.034-.093c.038-.113.111-.343.197-.732.1-.453.228-1.077.262-1.464-1.29.248-2.195-.45-2.61-1.045-.25-.357-.492-.792-.727-1.127-.19-.272-.346-.574-.556-.814-.143-.163-.122-.392.05-.444.156-.046.43-.053.642.062.298.163.535.43.763.755.204.288.423.636.712.872.245.2.535.308.84.308.277 0 .532-.07.756-.192.115-.469.317-.872.585-1.185-1.928-.216-3.816-.948-3.816-4.088 0-.904.316-1.64.832-2.22-.083-.204-.36-1.054.08-2.19.7-.225 2.316.852 2.366.883a8.311 8.311 0 0 1 2.222-.298c.753 0 1.503.1 2.22.296.05-.03 1.666-1.115 2.366-.883.443 1.14.167 1.996.08 2.2.518.583.834 1.324.834 2.228 0 3.15-1.892 3.869-3.824 4.082.317.292.597.838.597 1.532 0 .673-.012 1.398-.016 1.764a.71.71 0 0 0 .633.486c.224-.012.63-.06 1.125-.17a10.528 10.528 0 0 0 3.11-8.358 10.323 10.323 0 0 0-3.398-6.475A9.845 9.845 0 0 0 12.006 2Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/nicolei-faith-abot-89b668337/"
+                    target="_blank"
+                    aria-label="LinkedIn"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-1.61 1.61h-.032a1.61 1.61 0 1 1 1.642-1.61Zm-1.622 13.394h3.193V8.796H5.578v10.704Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    href="https://www.facebook.com/nicoleifaith.abot"
+                    target="_blank"
+                    aria-label="Facebook"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </footer>
             </div>
+          </div>
 
-            <!-- Projects Details -->
-            <div class="detail-item">
-                <!-- Interactive Particles Background -->
-                <div class="projects-bg">
-                    <canvas id="projects-canvas"></canvas>
-                </div>
-                <div class="divider"></div>
-                <div class="details-content">
-                    <h3 class="fade-in">My Work</h3>
-                    
-                    <!-- PROJECTS CAROUSEL -->
-                    <div class="projects-carousel fade-in">
-                        <div class="carousel-track">
-                            <!-- Project 1: Fitpose -->
-                            <div class="carousel-slide">
-                                <div class="project-image">
-                                    <img src="Media/Fitpose.png" alt="Fitpose Logo">
-                                </div>
-                                <div class="project-details">
-                                    <h4>FitPose</h4>
-                                    <p class="project-desc">An AI-powered fitness tracking application utilizing Computer Vision to monitor and correct workout postures in real-time.</p>
-                                    <div class="project-tech">
-                                        <span>Flutter Dart</span><span>Python</span><span>OpenCV</span><span>MediaPipe</span><span>Firebase</span>
-                                    </div>
-                                    <p class="project-authors"><strong>Co-Authors:</strong> Adlei Jed Tan and Peter Dhaniel Aquino</p>
-                                    <a href="https://github.com/NikkiAbot/FitPose-Application" class="btn" target="_blank">Source Code</a>
-                                </div>
-                            </div>
-                            <!-- Project 2: CardioCompass -->
-                            <div class="carousel-slide">
-                                <div class="project-image">
-                                    <img src="Media/CardioCompass.png" alt="CardioCompass Logo">
-                                </div>
-                                <div class="project-details">
-                                    <h4>CardioCompass</h4>
-                                    <p class="project-desc">An interactive cardiovascular health application designed to help users navigate their fitness journey and monitor heart metrics.</p>
-                                    <div class="project-tech">
-                                        <span>Xampp</span><span>Php</span><span>Javascript</span><span>Mysql</span>
-                                    </div>
-                                    <p class="project-authors"><strong>Co-Authors:</strong> Adlei Jed Tan and Amiel Jonathan Bermilio</p>
-                                    <a href="https://github.com/Bermillo/CardioCompass" class="btn" target="_blank">Source Code</a>
-                                </div>
-                            </div>
-                            <!-- Project 3: Reliance Producers Cooperative -->
-                            <div class="carousel-slide">
-                                <div class="project-image">
-                                    <img src="Media/RPC.png" alt="Reliance Producers Cooperative Logo">
-                                </div>
-                                <div class="project-details">
-                                    <h4>Reliance Producers Cooperative</h4>
-                                    <p class="project-desc">A fully functional corporate website designed, developed, and deployed during a professional practicum to enhance online visibility.</p>
-                                    <div class="project-tech">
-                                        <span>WordPress</span>
-                                    </div>
-                                    <p class="project-authors"><strong>Co-Authors:</strong> Solo Project</p>
-                                    <a href="https://rpc.com.ph/" class="btn" target="_blank">Visit Website</a>
-                                </div>
-                            </div>
-                            <!-- Project 4: My Portfolio -->
-                            <div class="carousel-slide">
-                                <div class="project-image">
-                                    <img src="Media/Logo.png" alt="Aperture Portfolio Logo">
-                                </div>
-                                <div class="project-details">
-                                    <h4>Aperture Portfolio</h4>
-                                    <p class="project-desc">A sleek, minimalist, and responsive personal portfolio showcasing my projects, skills, and professional journey with smooth animations.</p>
-                                    <div class="project-tech">
-                                        <span>HTML</span><span>CSS</span><span>JavaScript</span>
-                                    </div>
-                                    <p class="project-authors"><strong>Co-Authors:</strong> Solo Project</p>
-                                    <a href="https://github.com/NikkiAbot/Aperture" class="btn" target="_blank">Source Code</a>
-                                </div>
-                            </div>
-                        </div>
+          <!-- Projects Details -->
+          <div class="detail-item">
+            <!-- Interactive Particles Background -->
+            <div class="projects-bg">
+              <canvas id="projects-canvas"></canvas>
+            </div>
+            <div class="divider"></div>
+            <div class="details-content">
+              <h3 class="fade-in">My Work</h3>
 
-                        <!-- Carousel Controls -->
-                        <button class="proj-ctrl prev" aria-label="Previous Project">
-                            <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 19-7-7 7-7"/>
-                            </svg>
-                        </button>
-                        <button class="proj-ctrl next" aria-label="Next Project">
-                            <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m9 5 7 7-7 7"/>
-                            </svg>
-                        </button>
-                        
-                        <!-- Carousel Indicators -->
-                        <div class="proj-indicators">
-                            <span class="dot active" data-index="0"></span>
-                            <span class="dot" data-index="1"></span>
-                            <span class="dot" data-index="2"></span>
-                            <span class="dot" data-index="3"></span>
-                        </div>
+              <!-- PROJECTS CAROUSEL -->
+              <div class="projects-carousel fade-in">
+                <div class="carousel-track">
+                  <!-- Project 1: Fitpose -->
+                  <div class="carousel-slide">
+                    <div class="project-image">
+                      <img src="Media/Fitpose.png" alt="Fitpose Logo" />
                     </div>
-
-                    <!-- SOCIAL FOOTER -->
-                    <footer class="social-footer fade-in">
-                        <p>Connect with me</p>
-                        <div class="social-links">
-                            <a href="https://github.com/NikkiAbot" target="_blank" aria-label="GitHub">
-                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.392 6.477 10.514 10.514 0 0 0 3.106 8.35c.5.112.905.158 1.137.168a.747.747 0 0 0 .668-.456l.034-.093c.038-.113.111-.343.197-.732.1-.453.228-1.077.262-1.464-1.29.248-2.195-.45-2.61-1.045-.25-.357-.492-.792-.727-1.127-.19-.272-.346-.574-.556-.814-.143-.163-.122-.392.05-.444.156-.046.43-.053.642.062.298.163.535.43.763.755.204.288.423.636.712.872.245.2.535.308.84.308.277 0 .532-.07.756-.192.115-.469.317-.872.585-1.185-1.928-.216-3.816-.948-3.816-4.088 0-.904.316-1.64.832-2.22-.083-.204-.36-1.054.08-2.19.7-.225 2.316.852 2.366.883a8.311 8.311 0 0 1 2.222-.298c.753 0 1.503.1 2.22.296.05-.03 1.666-1.115 2.366-.883.443 1.14.167 1.996.08 2.2.518.583.834 1.324.834 2.228 0 3.15-1.892 3.869-3.824 4.082.317.292.597.838.597 1.532 0 .673-.012 1.398-.016 1.764a.71.71 0 0 0 .633.486c.224-.012.63-.06 1.125-.17a10.528 10.528 0 0 0 3.11-8.358 10.323 10.323 0 0 0-3.398-6.475A9.845 9.845 0 0 0 12.006 2Z" clip-rule="evenodd"/></svg>
-                            </a>
-                            <a href="https://www.linkedin.com/in/nicolei-faith-abot-89b668337/" target="_blank" aria-label="LinkedIn">
-                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-1.61 1.61h-.032a1.61 1.61 0 1 1 1.642-1.61Zm-1.622 13.394h3.193V8.796H5.578v10.704Z" clip-rule="evenodd"/></svg>
-                            </a>
-                            <a href="https://www.facebook.com/nicoleifaith.abot" target="_blank" aria-label="Facebook">
-                                <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z" clip-rule="evenodd"/></svg>
-                            </a>
-                        </div>
-                    </footer>
+                    <div class="project-details">
+                      <h4>FitPose</h4>
+                      <p class="project-desc">
+                        An AI-powered fitness tracking application utilizing
+                        Computer Vision to monitor and correct workout postures
+                        in real-time.
+                      </p>
+                      <div class="project-tech">
+                        <span>Flutter Dart</span><span>Python</span
+                        ><span>OpenCV</span><span>MediaPipe</span
+                        ><span>Firebase</span>
+                      </div>
+                      <p class="project-authors">
+                        <strong>Co-Authors:</strong> Adlei Jed Tan and Peter
+                        Dhaniel Aquino
+                      </p>
+                      <a
+                        href="https://github.com/NikkiAbot/FitPose-Application"
+                        class="btn"
+                        target="_blank"
+                        >Source Code</a
+                      >
+                    </div>
+                  </div>
+                  <!-- Project 2: CardioCompass -->
+                  <div class="carousel-slide">
+                    <div class="project-image">
+                      <img
+                        src="Media/CardioCompass.png"
+                        alt="CardioCompass Logo"
+                      />
+                    </div>
+                    <div class="project-details">
+                      <h4>CardioCompass</h4>
+                      <p class="project-desc">
+                        An interactive cardiovascular health application
+                        designed to help users navigate their fitness journey
+                        and monitor heart metrics.
+                      </p>
+                      <div class="project-tech">
+                        <span>Xampp</span><span>Php</span><span>Javascript</span
+                        ><span>Mysql</span>
+                      </div>
+                      <p class="project-authors">
+                        <strong>Co-Authors:</strong> Adlei Jed Tan and Amiel
+                        Jonathan Bermilio
+                      </p>
+                      <a
+                        href="https://github.com/Bermillo/CardioCompass"
+                        class="btn"
+                        target="_blank"
+                        >Source Code</a
+                      >
+                    </div>
+                  </div>
+                  <!-- Project 3: Reliance Producers Cooperative -->
+                  <div class="carousel-slide">
+                    <div class="project-image">
+                      <img
+                        src="Media/RPC.png"
+                        alt="Reliance Producers Cooperative Logo"
+                      />
+                    </div>
+                    <div class="project-details">
+                      <h4>Reliance Producers Cooperative</h4>
+                      <p class="project-desc">
+                        A fully functional corporate website designed,
+                        developed, and deployed during a professional practicum
+                        to enhance online visibility.
+                      </p>
+                      <div class="project-tech">
+                        <span>WordPress</span>
+                      </div>
+                      <p class="project-authors">
+                        <strong>Co-Authors:</strong> Solo Project
+                      </p>
+                      <a href="https://rpc.com.ph/" class="btn" target="_blank"
+                        >Visit Website</a
+                      >
+                    </div>
+                  </div>
+                  <!-- Project 4: My Portfolio -->
+                  <div class="carousel-slide">
+                    <div class="project-image">
+                      <img src="Media/Logo.png" alt="Aperture Portfolio Logo" />
+                    </div>
+                    <div class="project-details">
+                      <h4>Aperture Portfolio</h4>
+                      <p class="project-desc">
+                        A sleek, minimalist, and responsive personal portfolio
+                        showcasing my projects, skills, and professional journey
+                        with smooth animations.
+                      </p>
+                      <div class="project-tech">
+                        <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                      </div>
+                      <p class="project-authors">
+                        <strong>Co-Authors:</strong> Solo Project
+                      </p>
+                      <a
+                        href="https://github.com/NikkiAbot/Aperture"
+                        class="btn"
+                        target="_blank"
+                        >Source Code</a
+                      >
+                    </div>
+                  </div>
                 </div>
-            </div>
 
-            <!-- Contact Details -->
-            <div class="detail-item">
-                <!-- Left empty so the Contact page doesn't have extra scroll content -->
+                <!-- Carousel Controls -->
+                <button class="proj-ctrl prev" aria-label="Previous Project">
+                  <svg
+                    class="w-6 h-6"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m15 19-7-7 7-7"
+                    />
+                  </svg>
+                </button>
+                <button class="proj-ctrl next" aria-label="Next Project">
+                  <svg
+                    class="w-6 h-6"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m9 5 7 7-7 7"
+                    />
+                  </svg>
+                </button>
+
+                <!-- Carousel Indicators -->
+                <div class="proj-indicators">
+                  <span class="dot active" data-index="0"></span>
+                  <span class="dot" data-index="1"></span>
+                  <span class="dot" data-index="2"></span>
+                  <span class="dot" data-index="3"></span>
+                </div>
+              </div>
+
+              <!-- SOCIAL FOOTER -->
+              <footer class="social-footer fade-in">
+                <p>Connect with me</p>
+                <div class="social-links">
+                  <a
+                    href="https://github.com/NikkiAbot"
+                    target="_blank"
+                    aria-label="GitHub"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M12.006 2a9.847 9.847 0 0 0-6.484 2.44 10.32 10.32 0 0 0-3.392 6.477 10.514 10.514 0 0 0 3.106 8.35c.5.112.905.158 1.137.168a.747.747 0 0 0 .668-.456l.034-.093c.038-.113.111-.343.197-.732.1-.453.228-1.077.262-1.464-1.29.248-2.195-.45-2.61-1.045-.25-.357-.492-.792-.727-1.127-.19-.272-.346-.574-.556-.814-.143-.163-.122-.392.05-.444.156-.046.43-.053.642.062.298.163.535.43.763.755.204.288.423.636.712.872.245.2.535.308.84.308.277 0 .532-.07.756-.192.115-.469.317-.872.585-1.185-1.928-.216-3.816-.948-3.816-4.088 0-.904.316-1.64.832-2.22-.083-.204-.36-1.054.08-2.19.7-.225 2.316.852 2.366.883a8.311 8.311 0 0 1 2.222-.298c.753 0 1.503.1 2.22.296.05-.03 1.666-1.115 2.366-.883.443 1.14.167 1.996.08 2.2.518.583.834 1.324.834 2.228 0 3.15-1.892 3.869-3.824 4.082.317.292.597.838.597 1.532 0 .673-.012 1.398-.016 1.764a.71.71 0 0 0 .633.486c.224-.012.63-.06 1.125-.17a10.528 10.528 0 0 0 3.11-8.358 10.323 10.323 0 0 0-3.398-6.475A9.845 9.845 0 0 0 12.006 2Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/nicolei-faith-abot-89b668337/"
+                    target="_blank"
+                    aria-label="LinkedIn"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M12.51 8.796v1.697a3.738 3.738 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-1.61 1.61h-.032a1.61 1.61 0 1 1 1.642-1.61Zm-1.622 13.394h3.193V8.796H5.578v10.704Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    href="https://www.facebook.com/nicoleifaith.abot"
+                    target="_blank"
+                    aria-label="Facebook"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </footer>
             </div>
+          </div>
+
+          <!-- Contact Details -->
+          <div class="detail-item">
+            <!-- Left empty so the Contact page doesn't have extra scroll content -->
+          </div>
         </div>
       </section>
 
       <!-- BACK TO TOP BUTTON -->
       <button id="back-to-top" title="Back to Top">
-        <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m5 15 7-7 7 7"/>
+        <svg
+          class="w-6 h-6"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="m5 15 7-7 7 7"
+          />
         </svg>
       </button>
     </main>

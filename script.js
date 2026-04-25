@@ -456,3 +456,62 @@ function typeWriter() {
 }
 
 typeWriter();
+
+// EMAILJS CONTACT FORM LOGIC
+const contactForm = document.getElementById("contact-form");
+if (contactForm) {
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault(); // Robustly prevents the page from reloading
+    sendMail();
+  });
+}
+
+function sendMail() {
+  const sendBtn = document.querySelector(".contact-form .btn");
+  const originalBtnText = sendBtn.innerText;
+  sendBtn.innerText = "Sending..."; // Updates the button text while processing
+  sendBtn.disabled = true;
+
+  let parms = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    subject: document.getElementById("subject").value,
+    message: document.getElementById("message").value,
+  };
+
+  emailjs
+    .send("service_a2pym84", "template_dnsag4r", parms)
+    .then(() => {
+      sendBtn.innerText = originalBtnText;
+      sendBtn.disabled = false;
+
+      // Trigger dissolve effect on inputted text
+      const inputs = document.querySelectorAll(
+        ".contact-form input, .contact-form textarea",
+      );
+      inputs.forEach((input) => input.classList.add("dissolve"));
+
+      // Show the animated success popup
+      const popup = document.getElementById("success-popup");
+      popup.classList.add("show");
+
+      // Wait for the dissolve animation to finish (0.5s), then permanently clear the fields
+      setTimeout(() => {
+        inputs.forEach((input) => {
+          input.value = "";
+          input.classList.remove("dissolve");
+        });
+      }, 500);
+
+      // Automatically hide the popup after 3.5 seconds
+      setTimeout(() => {
+        popup.classList.remove("show");
+      }, 3500);
+    })
+    .catch((error) => {
+      sendBtn.innerText = originalBtnText;
+      sendBtn.disabled = false;
+      alert("Failed to send the email. Please try again.");
+      console.error("EmailJS Error:", error);
+    });
+}

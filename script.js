@@ -145,7 +145,7 @@ const nodesCanvas = document.getElementById("nodes-canvas");
 const ctx = nodesCanvas.getContext("2d");
 
 let nodesArray = [];
-const numNodes = 80; // Total scattered nodes
+const numNodes = 50; // Total scattered nodes
 const maxDistance = 150; // How close they need to be to connect
 
 class NodeParticle {
@@ -188,17 +188,10 @@ function initNodes() {
 }
 
 function animateNodes() {
-  const parentWidth = nodesCanvas.parentElement.offsetWidth;
-  const parentHeight = nodesCanvas.parentElement.offsetHeight;
-
-  // Automatically resize canvas and re-scatter nodes if container changes size
-  if (
-    parentWidth > 0 &&
-    (nodesCanvas.width !== parentWidth || nodesCanvas.height !== parentHeight)
-  ) {
-    nodesCanvas.width = parentWidth;
-    nodesCanvas.height = parentHeight;
-    initNodes();
+  // Skip heavy calculations and drawing if the section is hidden
+  if (!nodesCanvas.closest(".detail-item").classList.contains("active")) {
+    requestAnimationFrame(animateNodes);
+    return;
   }
 
   ctx.clearRect(0, 0, nodesCanvas.width, nodesCanvas.height);
@@ -228,6 +221,19 @@ function animateNodes() {
   }
   requestAnimationFrame(animateNodes);
 }
+
+// ResizeObserver to cleanly handle canvas resizing without Layout Thrashing
+const nodesResizeObserver = new ResizeObserver((entries) => {
+  for (let entry of entries) {
+    if (entry.contentRect.width > 0 && entry.contentRect.height > 0) {
+      nodesCanvas.width = entry.contentRect.width;
+      nodesCanvas.height = entry.contentRect.height;
+      initNodes();
+    }
+  }
+});
+if (nodesCanvas.parentElement)
+  nodesResizeObserver.observe(nodesCanvas.parentElement);
 
 // Start the animation loop
 animateNodes();
@@ -275,7 +281,7 @@ const projCanvas = document.getElementById("projects-canvas");
 const pCtx = projCanvas.getContext("2d");
 
 let projParticles = [];
-const numProjParticles = 90; // Number of floating particles
+const numProjParticles = 60; // Number of floating particles
 const projConnectionDistance = 120; // Distance to connect to each other
 const mouseInteractionRadius = 180; // Distance to connect to mouse
 
@@ -338,17 +344,10 @@ function initProjParticles() {
 }
 
 function animateProjParticles() {
-  if (!projCanvas.parentElement) return;
-  const parentWidth = projCanvas.parentElement.offsetWidth;
-  const parentHeight = projCanvas.parentElement.offsetHeight;
-
-  if (
-    parentWidth > 0 &&
-    (projCanvas.width !== parentWidth || projCanvas.height !== parentHeight)
-  ) {
-    projCanvas.width = parentWidth;
-    projCanvas.height = parentHeight;
-    initProjParticles();
+  // Skip heavy calculations and drawing if the section is hidden
+  if (!projCanvas.closest(".detail-item").classList.contains("active")) {
+    requestAnimationFrame(animateProjParticles);
+    return;
   }
 
   pCtx.clearRect(0, 0, projCanvas.width, projCanvas.height);
@@ -402,6 +401,19 @@ function animateProjParticles() {
   }
   requestAnimationFrame(animateProjParticles);
 }
+
+// ResizeObserver to cleanly handle canvas resizing without Layout Thrashing
+const projResizeObserver = new ResizeObserver((entries) => {
+  for (let entry of entries) {
+    if (entry.contentRect.width > 0 && entry.contentRect.height > 0) {
+      projCanvas.width = entry.contentRect.width;
+      projCanvas.height = entry.contentRect.height;
+      initProjParticles();
+    }
+  }
+});
+if (projCanvas.parentElement)
+  projResizeObserver.observe(projCanvas.parentElement);
 
 animateProjParticles();
 

@@ -1113,10 +1113,9 @@ header .logo .logo-text {
   width: 100%;
   height: 100%;
   display: block;
-  filter: blur(2.5px); /* Hardware-accelerated blur that won't lag */
-  transform: scale(
-    1.05
-  ); /* Stretches the canvas slightly to hide blurred edges */
+  filter: blur(10px); /* Increased blur to soften the shapes */
+  transform: scale(1.1) translateZ(0); /* Hide blurred edges and force GPU acceleration */
+  will-change: filter, transform;
 }
 
 .details-content h3 {

@@ -706,9 +706,10 @@ header .logo .logo-text {
   );
   width: 250%;
   height: 25%;
+  filter: blur(15px);
   z-index: 0;
   animation: slide-wave 12s infinite alternate ease-in-out;
-  will-change: transform;
+  will-change: transform, filter;
 }
 .bg-projects .wave-1 {
   top: 10%;

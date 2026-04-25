@@ -1667,41 +1667,55 @@ header .logo .logo-text {
 /* For tablet screens*/
 @media all and (max-width: 1024px) {
   .slider .list .item .content {
-    grid-template-columns: repeat(2, 300px);
-    gap: 100px;
+    grid-template-columns: repeat(2, 350px);
+    gap: 50px;
+    width: 100%;
+    justify-content: center;
   }
+  .slider .list .item .content h2 {
+    font-size: 7em;
+  }
+  .slider .list .content .projects-action-box,
   .slider .list .content .contact-action-box {
     width: 350px !important;
     right: 0; /* Resets the offset on smaller screens */
+  }
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 /* For mobile screens*/
 @media all and (max-width: 767px) {
   .slider .list .item .content {
-    grid-template-columns: 80vw;
-    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90vw;
+    gap: 15px;
     top: 90px;
   }
   .slider .list .item .content h2 {
-    font-size: 4em;
-  }
-  .slider .list .item .content p {
-    font-size: small;
-    text-align: right;
-    padding-left: 30%;
-    transform: translateY(-30px);
+    font-size: 3.5em;
+    line-height: 1;
+    text-align: center;
   }
   .slider .list .item .content p1,
   .slider .list .item .content p2 {
     font-size: 0.95rem;
     text-align: center;
     transform: translateY(0);
+    margin: 0;
+    width: 100%;
+  }
+  .slider .list .item .content p2 {
+    font-size: 2rem;
   }
   .slider .list .item .content p1 {
     background: rgba(255, 255, 255, 0.05);
     border-right: none;
     border-bottom: 3px solid #fff;
-    margin: 0 auto 20px auto;
+    margin: 0 auto 15px auto;
+    padding: 15px;
   }
   .slider .list .content .action-box {
     justify-content: center;
@@ -1725,7 +1739,24 @@ header .logo .logo-text {
     text-align: center;
   }
   .slider .list .content .projects-action-box .typewriter-text {
-    font-size: 0.85rem; /* Prevent overflow on narrow mobile screens */
+    font-size: 0.85rem;
+    white-space: normal;
+    word-break: break-word;
+  }
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* Prevent me.png from overlapping content above it */
+  .slider .list::after {
+    height: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+  }
+  /* Hide the me.png model on the Contact slide to prevent blocking the form */
+  .slider.contact-slide-active .list::after {
+    opacity: 0;
+    visibility: hidden;
   }
   .about-container {
     flex-direction: column;

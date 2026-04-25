@@ -43,6 +43,13 @@ const setSlider = () => {
   } else {
     prevBtn.querySelector("span").innerText = itemNames[active - 1];
   }
+
+  // Add a tracking class to the slider when on the "Contact Me" slide (index 3)
+  if (active === 3) {
+    document.querySelector(".slider").classList.add("contact-slide-active");
+  } else {
+    document.querySelector(".slider").classList.remove("contact-slide-active");
+  }
 };
 
 setSlider();

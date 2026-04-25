@@ -846,85 +846,12 @@ header .logo img {
   opacity: 0.5; /* Keeping it subtle and dark */
 }
 
-.node-particle {
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background: rgba(200, 130, 90, 0.6); /* Muted rust to match About theme */
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(200, 130, 90, 0.4);
-  animation: float-particle 20s infinite ease-in-out alternate;
-}
-
-.node-particle::after {
-  content: "";
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 250px;
-  height: 1px;
-  background: linear-gradient(90deg, rgba(200, 130, 90, 0.3), transparent);
-  transform-origin: 0 0;
-  animation: rotate-connection 30s infinite linear;
-}
-
-.n1 {
-  top: 5%;
-  left: 10%;
-  animation-delay: 0s;
-}
-.n2 {
-  top: 15%;
-  left: 80%;
-  animation-delay: -3s;
-}
-.n3 {
-  top: 35%;
-  left: 20%;
-  animation-delay: -6s;
-}
-.n4 {
-  top: 45%;
-  left: 75%;
-  animation-delay: -9s;
-}
-.n5 {
-  top: 65%;
-  left: 30%;
-  animation-delay: -12s;
-}
-.n6 {
-  top: 75%;
-  left: 85%;
-  animation-delay: -15s;
-}
-.n7 {
-  top: 85%;
-  left: 15%;
-  animation-delay: -18s;
-}
-.n8 {
-  top: 95%;
-  left: 60%;
-  animation-delay: -21s;
-}
-
-@keyframes float-particle {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(50px, -80px);
-  }
-}
-
-@keyframes rotate-connection {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+#nodes-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  filter: blur(1.5px); /* Adds a soft out-of-focus void effect */
+  transform: scale(1.05); /* Hides any hard edges caused by the blur */
 }
 
 .details-content h3 {

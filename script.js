@@ -132,3 +132,95 @@ const appearOnScroll = new IntersectionObserver(function (
 faders.forEach((fader) => {
   appearOnScroll.observe(fader);
 });
+
+// NODES BACKGROUND ANIMATION LOGIC (CANVAS)
+const nodesCanvas = document.getElementById("nodes-canvas");
+const ctx = nodesCanvas.getContext("2d");
+
+let nodesArray = [];
+const numNodes = 80; // Total scattered nodes
+const maxDistance = 150; // How close they need to be to connect
+
+class NodeParticle {
+  constructor(width, height) {
+    this.x = Math.random() * width;
+    this.y = Math.random() * height;
+    // Depth creates a 3D parallax effect: lower value = further away
+    this.depth = Math.random() * 0.8 + 0.2;
+    this.vx = (Math.random() - 0.5) * (1.5 * this.depth); // Far nodes move slower
+    this.vy = (Math.random() - 0.5) * (1.5 * this.depth);
+    this.radius = (Math.random() * 2 + 1) * this.depth; // Far nodes are smaller
+  }
+
+  update(width, height) {
+    this.x += this.vx;
+    this.y += this.vy;
+
+    // Bounce smoothly off the edges
+    if (this.x < 0 || this.x > width) this.vx *= -1;
+    if (this.y < 0 || this.y > height) this.vy *= -1;
+  }
+
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    // Far nodes are dimmer, adding depth
+    ctx.fillStyle = `rgba(200, 130, 90, ${this.depth * 0.8})`;
+    ctx.shadowBlur = 8; // Adds a glowing blur to the nodes
+    ctx.shadowColor = "rgba(200, 130, 90, 0.8)";
+    ctx.fill();
+    ctx.shadowBlur = 0; // Reset so connecting lines don't get overly blurred
+  }
+}
+
+function initNodes() {
+  nodesArray = [];
+  for (let i = 0; i < numNodes; i++) {
+    nodesArray.push(new NodeParticle(nodesCanvas.width, nodesCanvas.height));
+  }
+}
+
+function animateNodes() {
+  const parentWidth = nodesCanvas.parentElement.offsetWidth;
+  const parentHeight = nodesCanvas.parentElement.offsetHeight;
+
+  // Automatically resize canvas and re-scatter nodes if container changes size
+  if (
+    parentWidth > 0 &&
+    (nodesCanvas.width !== parentWidth || nodesCanvas.height !== parentHeight)
+  ) {
+    nodesCanvas.width = parentWidth;
+    nodesCanvas.height = parentHeight;
+    initNodes();
+  }
+
+  ctx.clearRect(0, 0, nodesCanvas.width, nodesCanvas.height);
+
+  for (let i = 0; i < nodesArray.length; i++) {
+    nodesArray[i].update(nodesCanvas.width, nodesCanvas.height);
+    nodesArray[i].draw();
+
+    // Calculate distance and draw connecting lines to all nearby nodes
+    for (let j = i + 1; j < nodesArray.length; j++) {
+      const dx = nodesArray[i].x - nodesArray[j].x;
+      const dy = nodesArray[i].y - nodesArray[j].y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      if (distance < maxDistance) {
+        ctx.beginPath();
+        ctx.moveTo(nodesArray[i].x, nodesArray[i].y);
+        ctx.lineTo(nodesArray[j].x, nodesArray[j].y);
+        // Connections between far nodes are also dimmer
+        const depthOpacity = (nodesArray[i].depth + nodesArray[j].depth) / 2;
+        const opacity = (1 - distance / maxDistance) * depthOpacity;
+        ctx.strokeStyle = `rgba(200, 130, 90, ${opacity * 0.6})`; // Fading connection
+        ctx.lineWidth = 1;
+        ctx.stroke();
+      }
+    }
+  }
+  requestAnimationFrame(animateNodes);
+}
+
+// Start the animation loop
+animateNodes();

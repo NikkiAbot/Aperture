@@ -145,7 +145,7 @@ const nodesCanvas = document.getElementById("nodes-canvas");
 const ctx = nodesCanvas.getContext("2d");
 
 let nodesArray = [];
-const numNodes = 50; // Total scattered nodes
+const numNodes = 25; // Total scattered nodes
 const maxDistance = 150; // How close they need to be to connect
 
 class NodeParticle {
@@ -172,11 +172,8 @@ class NodeParticle {
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
     // Far nodes are dimmer, adding depth
-    ctx.fillStyle = `rgba(200, 130, 90, ${this.depth * 0.8})`;
-    ctx.shadowBlur = 8; // Adds a glowing blur to the nodes
-    ctx.shadowColor = "rgba(200, 130, 90, 0.8)";
+    ctx.fillStyle = `rgba(200, 130, 90, ${this.depth})`;
     ctx.fill();
-    ctx.shadowBlur = 0; // Reset so connecting lines don't get overly blurred
   }
 }
 
@@ -281,7 +278,7 @@ const projCanvas = document.getElementById("projects-canvas");
 const pCtx = projCanvas.getContext("2d");
 
 let projParticles = [];
-const numProjParticles = 60; // Number of floating particles
+const numProjParticles = 35; // Number of floating particles
 const projConnectionDistance = 120; // Distance to connect to each other
 const mouseInteractionRadius = 180; // Distance to connect to mouse
 

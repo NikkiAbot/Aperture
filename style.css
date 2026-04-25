@@ -595,7 +595,6 @@ header .logo .logo-text {
 .bg-home .blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(40px);
   z-index: 0;
   animation: float-blob 15s infinite alternate ease-in-out;
   will-change: transform;
@@ -604,7 +603,11 @@ header .logo .logo-text {
 .bg-home .blob-1 {
   width: 60%;
   height: 60%;
-  background: rgba(120, 120, 120, 0.15);
+  background: radial-gradient(
+    circle,
+    rgba(120, 120, 120, 0.15) 0%,
+    transparent 70%
+  );
   top: -10%;
   left: -10%;
 }
@@ -612,7 +615,11 @@ header .logo .logo-text {
 .bg-home .blob-2 {
   width: 50%;
   height: 50%;
-  background: rgba(60, 60, 60, 0.4);
+  background: radial-gradient(
+    circle,
+    rgba(60, 60, 60, 0.3) 0%,
+    transparent 70%
+  );
   bottom: -10%;
   right: -10%;
   animation-delay: -5s;
@@ -621,7 +628,11 @@ header .logo .logo-text {
 .bg-home .blob-3 {
   width: 40%;
   height: 40%;
-  background: rgba(180, 180, 180, 0.1);
+  background: radial-gradient(
+    circle,
+    rgba(180, 180, 180, 0.15) 0%,
+    transparent 70%
+  );
   top: 40%;
   left: 30%;
   animation-delay: -10s;
@@ -636,9 +647,7 @@ header .logo .logo-text {
 }
 .bg-about .node {
   position: absolute;
-  background: rgba(200, 130, 90, 0.15);
-  border-radius: 15px;
-  filter: blur(20px);
+  border-radius: 50%;
   z-index: 0;
   animation: pulse-node 8s infinite alternate ease-in-out;
   will-change: transform, opacity;
@@ -646,6 +655,11 @@ header .logo .logo-text {
 .bg-about .node-1 {
   width: 50%;
   height: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(200, 130, 90, 0.15) 0%,
+    transparent 70%
+  );
   top: 10%;
   left: 10%;
   animation-delay: 0s;
@@ -653,6 +667,11 @@ header .logo .logo-text {
 .bg-about .node-2 {
   width: 40%;
   height: 40%;
+  background: radial-gradient(
+    circle,
+    rgba(200, 130, 90, 0.15) 0%,
+    transparent 70%
+  );
   bottom: 10%;
   right: 10%;
   animation-delay: -3s;
@@ -660,6 +679,11 @@ header .logo .logo-text {
 .bg-about .node-3 {
   width: 60%;
   height: 60%;
+  background: radial-gradient(
+    circle,
+    rgba(200, 130, 90, 0.15) 0%,
+    transparent 70%
+  );
   top: 40%;
   left: 30%;
   animation-delay: -6s;
@@ -682,7 +706,6 @@ header .logo .logo-text {
   );
   width: 250%;
   height: 25%;
-  filter: blur(15px);
   z-index: 0;
   animation: slide-wave 12s infinite alternate ease-in-out;
   will-change: transform;
@@ -719,7 +742,6 @@ header .logo .logo-text {
     rgba(180, 90, 110, 0.3) 0%,
     transparent 70%
   );
-  filter: blur(10px);
   z-index: 0;
   animation: drift-spark 10s infinite alternate ease-in-out;
   will-change: transform, opacity;

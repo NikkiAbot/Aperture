@@ -62,6 +62,7 @@ window.addEventListener("resize", setDiameter);
 
 // BACK TO TOP BUTTON LOGIC
 const backToTopBtn = document.getElementById("back-to-top");
+const header = document.querySelector("header");
 
 window.addEventListener("scroll", () => {
   if (window.scrollY > 200) {
@@ -69,8 +70,65 @@ window.addEventListener("scroll", () => {
   } else {
     backToTopBtn.classList.remove("show");
   }
+
+  // STICKY HEADER BACKGROUND LOGIC
+  if (window.scrollY > 50) {
+    header.classList.add("scrolled");
+  } else {
+    header.classList.remove("scrolled");
+  }
 });
 
 backToTopBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// HAMBURGER MENU LOGIC
+const menuToggle = document.getElementById("menu-toggle");
+const navMenu = document.getElementById("nav-menu");
+const navMenuItems = document.querySelectorAll(".nav-menu li");
+
+menuToggle.addEventListener("click", () => {
+  navMenu.classList.toggle("active");
+});
+
+navMenuItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    const targetIndex = parseInt(item.getAttribute("data-index"));
+    active = targetIndex;
+    setSlider();
+    navMenu.classList.remove("active");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+});
+
+document.addEventListener("click", (e) => {
+  if (!menuToggle.contains(e.target) && !navMenu.contains(e.target)) {
+    navMenu.classList.remove("active");
+  }
+});
+
+// SCROLL TRIGGER ANIMATION LOGIC
+const faders = document.querySelectorAll(".fade-in");
+
+const appearOptions = {
+  threshold: 0.1, // Trigger when 10% of the element is visible
+  rootMargin: "0px 0px -50px 0px", // Trigger slightly before it hits the true bottom
+};
+
+const appearOnScroll = new IntersectionObserver(function (
+  entries,
+  appearOnScroll,
+) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("appear");
+    } else {
+      entry.target.classList.remove("appear");
+    }
+  });
+}, appearOptions);
+
+faders.forEach((fader) => {
+  appearOnScroll.observe(fader);
 });

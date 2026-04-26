@@ -1858,8 +1858,7 @@ header .logo .logo-text {
   /* Pre-allocates GPU memory to ensure the text sliding animation hits a smooth 60fps */
   .slider .list .item .content h2,
   .slider .list .item .content p1,
-  .slider .list .item .content p2,
-  .slider .list .item .content .action-box {
+  .slider .list .item .content p2 {
     will-change: transform, opacity;
   }
   .slider .list .item .content h2 {
@@ -1909,6 +1908,11 @@ header .logo .logo-text {
     justify-content: center;
     width: 100%;
     transform: none !important; /* Removes the containing block trap */
+    will-change: opacity; /* Pre-allocates GPU layer to stop transition glitches */
+  }
+  /* Prevents browser from destroying the GPU layer when the fade completes, stopping the "blink" */
+  .slider .list .item.active .content .action-box {
+    opacity: 0.99;
   }
   .slider .list .content .about-action-box,
   .slider .list .content .contact-action-box,
@@ -1943,7 +1947,8 @@ header .logo .logo-text {
       0.9rem
     ); /* Responsive size keeps the text safely on one line */
     white-space: nowrap; /* Stops words from abruptly jumping to the next line */
-    min-height: 1.5em; /* Resets container height */
+    height: 1.5em; /* Locks container height perfectly to stop layout thrashing */
+    line-height: 1.5em;
     transform: none; /* Stops the GPU layer from causing a flickering/blinking visual glitch */
     backface-visibility: visible;
   }

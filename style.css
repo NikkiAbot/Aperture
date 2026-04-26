@@ -176,6 +176,11 @@ header .logo .logo-text {
   z-index: 4;
 }
 
+/* Forces the "More About Me" title to stack into 3 lines on desktop */
+.slider .list .item:nth-child(2) .content h2 {
+  width: min-content;
+}
+
 /* Styling for p1: Aligned to the left */
 .slider .list .content p1 {
   display: inline-block;
@@ -1816,10 +1821,23 @@ header .logo .logo-text {
 }
 /* For mobile screens*/
 @media all and (max-width: 767px) {
-  /* Disable extremely expensive GPU blur animations during slide transitions */
+  /* Disable extremely expensive GPU blur and rotation animations during slide transitions */
   .slider .list .item .image,
   .slider .list .item.active ~ .item .image {
     filter: none !important;
+    transform: none !important; /* Stops the heavy rotation of complex box-shadows */
+  }
+  .slider .list .item .image::before,
+  .slider .list .item .image::after,
+  .slider .list .item.active ~ .item .image::before,
+  .slider .list .item.active ~ .item .image::after {
+    transform: translate(
+      -50%,
+      -50%
+    ) !important; /* Keeps abstract rings centered but stops rotation */
+  }
+  .slider .list .item .image.animated-bg::after {
+    backdrop-filter: none !important; /* Prevents layer tearing on abstract shapes */
   }
 
   .slider .list .item .content {
@@ -1837,10 +1855,22 @@ header .logo .logo-text {
     height: 100%; /* Spans the exact full height of the screen */
     text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8); /* Optimize massive text-shadow */
   }
+  /* Pre-allocates GPU memory to ensure the text sliding animation hits a smooth 60fps */
+  .slider .list .item .content h2,
+  .slider .list .item .content p1,
+  .slider .list .item .content p2,
+  .slider .list .item .content .action-box {
+    will-change: transform, opacity;
+  }
   .slider .list .item .content h2 {
     font-size: clamp(3rem, 12vw, 4.5rem);
     line-height: 1;
     text-align: center;
+  }
+
+  /* Resets the About title to spread across a single line naturally on mobile */
+  .slider .list .item:nth-child(2) .content h2 {
+    width: 100%;
   }
   .slider .list .item .content p1,
   .slider .list .item .content p2 {

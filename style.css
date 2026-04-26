@@ -143,13 +143,19 @@ header .logo .logo-text {
 
 .slider .list .item .content {
   position: absolute;
-  top: 20%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: fit-content;
   width: 100%;
-  max-width: var(--width-df);
+  max-width: 1050px; /* Increased to push the left and right sides a little further apart */
   padding: 0 15px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: clamp(20px, 4vw, 80px);
+  align-items: center;
+  gap: 60px; /* Widened the gap to give the elements more breathing room */
   font-size: 1.2em;
   text-transform: uppercase;
   font-family: Poppins;
@@ -163,6 +169,11 @@ header .logo .logo-text {
   grid-row: 1 / 3;
   z-index: 1; /* Tucks the h2 behind the model */
   opacity: 0;
+}
+
+/* Brings the Home slide's h2 forward so it sits entirely in front of the model */
+.slider .list .item:nth-child(1) .content h2 {
+  z-index: 4;
 }
 
 /* Styling for p1: Aligned to the left */
@@ -1805,6 +1816,12 @@ header .logo .logo-text {
 }
 /* For mobile screens*/
 @media all and (max-width: 767px) {
+  /* Disable extremely expensive GPU blur animations during slide transitions */
+  .slider .list .item .image,
+  .slider .list .item.active ~ .item .image {
+    filter: none !important;
+  }
+
   .slider .list .item .content {
     display: flex;
     flex-direction: column;
@@ -1813,7 +1830,12 @@ header .logo .logo-text {
     padding: 120px 15px 0 15px; /* Centers the text perfectly between header and model */
     gap: 15px;
     top: 0; /* Anchors the container to the true top */
+    left: 0; /* Resets the desktop centering */
+    right: auto;
+    bottom: auto;
+    margin: 0;
     height: 100%; /* Spans the exact full height of the screen */
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8); /* Optimize massive text-shadow */
   }
   .slider .list .item .content h2 {
     font-size: clamp(3rem, 12vw, 4.5rem);
@@ -1838,7 +1860,8 @@ header .logo .logo-text {
   }
   .slider .list .item .content p1 {
     transform: translateY(0);
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: none !important; /* Disable expensive blur */
     border-right: none;
     border-bottom: 3px solid #fff;
     margin: 0 auto 15px auto;
@@ -1867,12 +1890,13 @@ header .logo .logo-text {
     width: 100% !important;
     max-width: 100% !important;
     right: 0;
+    backdrop-filter: none !important; /* Disable blur to stop lag and z-index blinking */
+    background: rgba(0, 0, 0, 0.4); /* Solid fallback background */
   }
   .slider .list .content .about-action-box,
   .slider .list .content .projects-action-box {
     position: static !important;
     transform: none !important;
-    backdrop-filter: none !important; /* Removes the blur trap so buttons escape to the bottom! */
     z-index: 10 !important; /* Elevates the box so it stays in front of me.png even during fade transitions */
   }
   .slider .list .content .about-action-box p1,
@@ -1883,10 +1907,15 @@ header .logo .logo-text {
     align-self: center;
   }
   .slider .list .content .projects-action-box .typewriter-text {
-    font-size: 0.85rem;
-    white-space: normal;
-    word-break: break-word;
-    min-height: 2.5rem; /* Reserves space for 2 lines so the box height doesn't jump */
+    font-size: clamp(
+      0.7rem,
+      4vw,
+      0.9rem
+    ); /* Responsive size keeps the text safely on one line */
+    white-space: nowrap; /* Stops words from abruptly jumping to the next line */
+    min-height: 1.5em; /* Resets container height */
+    transform: none; /* Stops the GPU layer from causing a flickering/blinking visual glitch */
+    backface-visibility: visible;
   }
   /* Position action buttons at the bottom of the screen, over me.png */
   .slider .list .content .about-action-box .action-buttons,
